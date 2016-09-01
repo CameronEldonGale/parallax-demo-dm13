@@ -1,19 +1,29 @@
 $(window).scroll(function(){
 
-var winScroll = $(this).scrollTop()
+  //find the scroll and use this variable to move elements
+    //ask the studenst what object  'this' refers to?---> the window. scroll top returns the current verticle posistion
+    var winScroll = $(this).scrollTop();
 
-$('.left-branch').css({
-  'transform': 'translate(-'+ winScroll /10 +'%, 0px)'
+  // left branch moves out of view on the x-axis on scroll
+
+    $('.left-branch').css({
+        'transform': 'translate(-'+ winScroll /10 +'%, 0px)'
+      });
+
+  // right branch moves out of view on the x-axis on scroll
+
+    $('.right-branch').css({
+        'transform': 'translate('+ winScroll /10 +'%, 0px)'
+      });
+
+  // vader moves down on the y-axis on scroll
+
+    $('.vader').css({
+        'transform': 'translate(0px, '+ winScroll /10 +'%)'
+      });
+// spinning vader and scaling vader
+      // $('.vader').css({
+      //     'transform': 'scale(-'+winScroll/100+') '+'rotate('+winScroll+'deg)'
+      //   })
+
   })
-
-$('.right-branch').css({
-  'transform' : 'translate('+ winScroll /10 +'%, 0px)'
-})
-
-$('.vader').css({
-    'transform': 'translate(0px, '+ winScroll /10 +'%)'
-  });
-
-
-
-})
